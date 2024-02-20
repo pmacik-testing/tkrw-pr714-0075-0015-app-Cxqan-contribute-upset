@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: devfile-sample-rhnu
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: devfile-sample-rhnu
+    app.kubernetes.io/part-of: tkrw-pr714-0075-0015-app
+  name: devfile-sample-rhnupbvx
+spec:
+  path: /
+  port:
+    targetPort: 3001
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: devfile-sample-rhnu
+    weight: null
+status: {}
